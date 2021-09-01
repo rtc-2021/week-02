@@ -1,6 +1,13 @@
 const button = document.querySelector('#test-button');
-button.addEventListener('__ready', function() {
-  console.log('OMG I am so READY! FINALLY! YAY!');
+const body = document.querySelector('body');
+body.addEventListener('click', function(event) {
+  const el = event.target;
+  console.log('Someone clicked something!');
+  console.log('Clicked Element:', el.tagName);
+  console.log('Clicked ID:', el.id);
+  if (event.target.id === 'test-button') {
+    console.log('Also Clicked Class:', el.className);
+  }
 });
 
 console.log('One');
