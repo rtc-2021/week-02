@@ -1,11 +1,12 @@
+const my_ready_event = new Event('__ready');
 const button = document.querySelector('#test-button');
-button.addEventListener('click', function() {
-  console.log('OMG someone clicked me! FINALLY!');
+button.addEventListener('__ready', function() {
+  console.log('OMG I am so READY! FINALLY!');
 });
 
 console.log('One');
 setTimeout(function () {
   console.log('Two');
-  button.click();
+  button.dispatchEvent(my_ready_event);
 } , 1000);
 console.log('Three');
